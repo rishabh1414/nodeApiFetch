@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hodlinfo</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="">HODLINFO</a><span>.com</span>
+            <p>powered By <span>Finstreet</span></p>
+        </div>
+
+        <div class="select">
+            <select>
+                <option value="inr">INR</option>
+            </select>
+            <select>
+                <option value="inr">BTC</option>
+                <option value="inr">ETH</option>
+                <option value="inr">USDT</option>
+                <option value="inr">XRP</option>
+                <option value="inr">TRX</option>
+                <option value="inr">DASH</option>
+                <option value="inr">ZEC</option>
+                <option value="inr">XEM</option>
+                <option value="inr">IOST</option>
+                <option value="inr">WIN</option>
+                <option value="inr">BTT</option>
+                <option value="inr">WRX</option>
+            </select>
+        </div>
+        <div class="rightNav">
+            <div class="time">60</div>
+            <button><span class="material-icons" style="font-size:35px">telegram</span>Connect Telegram</button>
+            <div class="slider" id="toggleBtn">
+                <span class="btn"></span>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <table>
+            <thead>
+                <tr class="table_head">
+                    <td>#</td>
+                    <td>Name</td>
+                    <td>Last </td>
+                    <td>Buy / Sell Price </td>
+                    <td>Volume</td>
+                    <td>Base_Unit</td>
+                </tr>
+            </thead>
+            <tbody class="table_body">
+                <% ticker.forEach(data=> { %>
+                    <tr>
+
+                        <td>
+                            <%= data.sno %>
+                        </td>
+                        <td>
+                            <%= data.name %>
+                        </td>
+                        <td>
+                            <%= data.last.toLocaleString('en-US') %>
+                        </td>
+                        <td>
+                            <%= data.buy.toLocaleString('en-US') %>/ <%= data.sell.toLocaleString('en-US') %>
+                        </td>
+                        <td>
+                            <%= data.volume.toLocaleString('en-US') %>
+                        </td>
+                        <td>
+                            <%= data.base_unit %>
+                        </td>
+
+                    </tr>
+                    <% }); %>
+
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        let btn = document.getElementById('toggleBtn')
+
+        btn.onclick = function () {
+            document.body.classList.toggle('lightTheme')
+            document.querySelector('.table_body tr').classList.toggle('lightTheme')
+            document.querySelector('.slider .btn').classList.toggle('right')
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark_gray: #191d28;
+    --primary: #3dc6c1;
+    --blue_gray: #2e3241;
+    --gray: #6c757d;
+    --white: #fff;
+}
+
+.lightTheme {
+    --white: #000;
+    --dark_gray: #f1faee;
+    --blue_gray: #d3d3d3;
+}
+
+.right {
+    transform: translateX(-70%);
+}
+
+body {
+    background-color: var(--dark_gray);
+    font-family: 'Oswald', sans-serif;
+    color: var(--white);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.logo a {
+    font-size: 45px;
+    font-weight: 300;
+    color: var(--primary);
+    text-decoration: none;
+    word-spacing: 10px;
+}
+
+.logo span {
+    font-size: 20px;
+    color: var(--white);
+}
+
+.logo p {
+    color: var(--blue_gray);
+}
+
+.logo p span {
+    color: var(--primary);
+}
+
+
+
+.select select {
+    background-color: var(--blue_gray);
+    color: var(--white);
+    border: none;
+    font-size: 30px;
+    text-align: center;
+    margin: 0 10px;
+    padding: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.select select option {
+    font-size: 15px;
+}
+
+.rightNav {
+    display: flex;
+    align-items: center;
+}
+
+.time {
+    background-color: var(--blue_gray);
+    padding: 5px;
+    border-radius: 50%;
+    border: 5px solid var(--primary);
+    color: var(--primary);
+}
+
+.rightNav button {
+    margin: 0px 10px;
+    padding: 8px 10px;
+    background-color: var(--primary);
+    color: var(--white);
+    font-size: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.slider {
+    height: 37px;
+    width: 60px;
+    background-color: var(--blue_gray);
+    position: relative;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.slider .btn {
+    position: absolute;
+    top: calc(50% - 14px);
+    right: 5px;
+    padding: 14px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+/* *         Table */
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    width: 90%;
+    font-size: 20px;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0 1em;
+}
+
+.table_head td {
+    color: var(--gray);
+}
+
+.table_body {
+    border-radius: 10%;
+}
+
+
+.table_body td {
+    padding: 8px;
+    color: var(--white);
+}
+
+
+
+.table_body tr {
+    background-color: var(--blue_gray);
+}
+
+@media (min-width:400px) and (max-width:1000px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .select {
+        margin: 20px 0px;
+    }
+}
